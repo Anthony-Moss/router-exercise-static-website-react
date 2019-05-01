@@ -1,13 +1,22 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
 
-function Movies(props) {
+function Movies({movies, match, history}) {
+    const movieLinks = movies.map(movieName => (
+        <li>
+            <Link to={`${match.path}/${movieName}`}>{movieName}</Link>
+        </li>
+    ));
     return (
         <div>
             <h1>This is my movies</h1>
             <span>
                 <h1>🎬</h1>
             </span>
+            <ul>
+                {movieLinks}
+            </ul>
         </div>
     )
 }

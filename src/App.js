@@ -1,18 +1,67 @@
 import React from 'react';
 import './App.css';
+import Home from './Home';
 import Music from './Music';
 import Movies from './Movies';
+import Movie from './Movie';
 import Drinks from './Drinks';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>React Router examples</h1>
-      <Music />
-      <Movies />
-      <Drinks />
-    </div>
-  );
+import {
+  Link,
+  Route,
+  Switch
+} from 'react-router-dom';
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      movies: [
+        'Kill Bill',
+        'The Boondock Saints',
+        'Die Hard',
+        'Serenity',
+        'Donnie Darko',
+        "The Hitchhiker's Guide to the Galaxy",
+        'Big Trouble in Little China',
+        'Gladiator',
+        'Jurassic Park',
+        'Pulp Fiction',
+      ]
+    }
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>React Router examples</h1>
+        <Link to='/'>Home</Link>
+        <br></br>
+        <Link to='/music'>Music</Link>
+        <br></br>
+        <Link to='/movies'>Movies</Link>
+        <br></br>
+        <Link to='/drinks'>Drinks</Link>
+        
+        <Switch>
+          <Route exact path="/" component={Home} />
+
+          <Route path="/movies"
+            render={(props) => (
+              <Movies 
+                {...props}
+                movies={this.state.movies}
+              />
+            )}
+          />
+        </Switch>
+        <Route path="/movies/:movie" component={Movie} />
+        {/* <Music />
+        <Movies />
+        <Drinks /> */}
+      </div>
+    );
+  }
 }
 
 export default App;
