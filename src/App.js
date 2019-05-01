@@ -7,6 +7,7 @@ import Movies from './Movies';
 import Movie from './Movie';
 import Drinks from './Drinks';
 import Drink from './Drink';
+import Dashboard from './Dashboard';
 
 import {
   Link,
@@ -63,6 +64,8 @@ class App extends React.Component {
         <Link to='/movies'>Movies</Link>
         <br></br>
         <Link to='/drinks'>Drinks</Link>
+        <br></br>
+        <Link to='/all'>Dashboard</Link>
         
         <Switch>
           <Route exact path="/" component={Home} />
@@ -94,10 +97,20 @@ class App extends React.Component {
             )}
           />
 
+          <Route path="/all"
+            render={(props) => (
+              <Dashboard {...props} songs={this.state.songs} drinks={this.state.drinks} movies={this.state.movies} />
+            )}
+          />
+
         </Switch>
         <Route path="/movies/:movie" component={Movie} />
         <Route path="/drinks/:drink" component={Drink} />
         <Route path="/music/:song" component={Song} />
+        <Route path="/all/:song" component={Song} />
+        <Route path="/all/:movie" component={Movie} />
+        <Route path="/all/:drink" component={Drink} />
+
       </div>
     );
   }
