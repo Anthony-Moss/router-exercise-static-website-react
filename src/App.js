@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Home from './Home';
 import Music from './Music';
+import Song from './Song';
 import Movies from './Movies';
 import Movie from './Movie';
 import Drinks from './Drinks';
@@ -35,7 +36,18 @@ class App extends React.Component {
         'Long Island',
         'All the Rum',
         'Vodka'
-
+      ],
+      songs: [
+        'The Spectre',
+        'SOS',
+        'Waiting For Love',
+        'The Nights',
+        'Project Dreams',
+        'The Days',
+        'Are You With Me',
+        'Fly',
+        'Keep It Mello',
+        'Check This Out'
       ]
     }
   }
@@ -73,9 +85,19 @@ class App extends React.Component {
             )}
           />
 
+          <Route path="/music"
+            render={(props) => (
+              <Music
+                {...props}
+                songs={this.state.songs}
+              />
+            )}
+          />
+
         </Switch>
         <Route path="/movies/:movie" component={Movie} />
         <Route path="/drinks/:drink" component={Drink} />
+        <Route path="/music/:song" component={Song} />
         {/* <Music />
         <Movies />
         <Drinks /> */}
