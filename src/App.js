@@ -5,6 +5,7 @@ import Music from './Music';
 import Movies from './Movies';
 import Movie from './Movie';
 import Drinks from './Drinks';
+import Drink from './Drink';
 
 import {
   Link,
@@ -27,6 +28,14 @@ class App extends React.Component {
         'Gladiator',
         'Jurassic Park',
         'Pulp Fiction',
+      ],
+      drinks: [
+        'Bourbon',
+        'Whiskey and Coke',
+        'Long Island',
+        'All the Rum',
+        'Vodka'
+
       ]
     }
   }
@@ -54,8 +63,19 @@ class App extends React.Component {
               />
             )}
           />
+
+          <Route path="/drinks"
+            render={(props) => (
+              <Drinks
+                {...props}
+                drinks={this.state.drinks}
+              />
+            )}
+          />
+
         </Switch>
         <Route path="/movies/:movie" component={Movie} />
+        <Route path="/drinks/:drink" component={Drink} />
         {/* <Music />
         <Movies />
         <Drinks /> */}

@@ -14,7 +14,7 @@ function Movies({movies, match, history}) {
             <span>
                 <h1>🎬</h1>
             </span>
-            <ul>
+            <ul style={{listStyleType: 'none', paddingLeft: 0}}>
                 {movieLinks}
             </ul>
         </div>
