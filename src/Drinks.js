@@ -15,13 +15,11 @@ function Drinks({ drinks, match, history}) {
             <span>
                 <h1>🥃</h1>
             </span>
-            <span>
             <ul style={{listStyleType: 'none', paddingLeft: 0}}>
                 <li>
                 {drinkLinks}
                 </li>
             </ul>
-            </span>
         </div>
     )
 }

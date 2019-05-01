@@ -98,9 +98,6 @@ class App extends React.Component {
         <Route path="/movies/:movie" component={Movie} />
         <Route path="/drinks/:drink" component={Drink} />
         <Route path="/music/:song" component={Song} />
-        {/* <Music />
-        <Movies />
-        <Drinks /> */}
       </div>
     );
   }

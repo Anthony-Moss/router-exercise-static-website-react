@@ -9,4 +9,4 @@ function Drink({match}) {
     )
 }
 
-export default Drink
+export default Drink;
