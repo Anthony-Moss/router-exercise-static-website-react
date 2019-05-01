@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Music from './Music';
 import Movies from './Movies';
+import Drinks from './Drinks';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <h1>React Router examples</h1>
       <Music />
       <Movies />
+      <Drinks />
     </div>
   );
 }
