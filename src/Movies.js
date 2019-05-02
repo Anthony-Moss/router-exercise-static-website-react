@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Movies({movies, moviesData, match, history}) {
-    const movieInfo = movies;
-    const movieLinks = Object.keys(moviesData).map(movieName => (
+    // const movieInfo = movies;
+    const movieLinks = movies.map(movieName => (
         <li>
             <Link to={`${match.path}/${movieName}`}>{movieName}</Link>
         </li>

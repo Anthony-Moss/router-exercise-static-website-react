@@ -143,8 +143,8 @@ class App extends React.Component {
           <Route path="/movies"
             render={(props) => (
               <Movies 
-                // {...props}
-                // movies={Object.keys(this.state.movies)}
+                {...props}
+                movies={Object.keys(this.state.movies)}
                 {...props}
                 moviesData={this.state.movies}
               />
@@ -164,14 +164,15 @@ class App extends React.Component {
             render={(props) => (
               <Music
                 {...props}
-                songs={this.state.songs}
+                songs={Object.keys(this.state.songs)}
+                songDetails={this.state.songs}
               />
             )}
           />
 
           <Route path="/all"
             render={(props) => (
-              <Dashboard {...props} songs={this.state.songs} drinks={this.state.drinks} movies={this.state.movies} />
+              <Dashboard {...props} songs={Object.keys(this.state.songs)} drinks={this.state.drinks} movies={Object.keys(this.state.movies)} />
             )}
           />
 
@@ -179,9 +180,9 @@ class App extends React.Component {
         <Route path="/movies/:movie" component={Movie} />
         <Route path="/drinks/:drink" component={Drink} />
         <Route path="/music/:song" component={Song} />
-        <Route path="/all/:song" component={Song} />
-        <Route path="/all/:movie" component={Movie} />
-        <Route path="/all/:drink" component={Drink} />
+        <Route path="/all/music/:song" component={Dashboard} />
+        <Route path="/all/movies/:movie" component={Movie} />
+        <Route path="/all/drinks/:drink" component={Drink} />
 
       </div>
     );
