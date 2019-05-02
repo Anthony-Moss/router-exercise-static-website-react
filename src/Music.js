@@ -12,9 +12,11 @@ function Music({songs, match, history}) {
     return (
         <div>
             <h1>This is my musics</h1>
-            <span>
-                <h1>🎧</h1>
+            <h1>
+            <span role='img' aria-labelledby='imgHelp'>
+                🎧
             </span>
+            </h1>
             <ul style={{listStyleType: 'none', paddingLeft: 0}}>
                 {musicLinks}
             </ul>

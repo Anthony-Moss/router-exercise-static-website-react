@@ -1,10 +1,11 @@
 import React from 'react';
 
-function Movie({match}) {
+function Movie({match, moviesData}) {
+    console.log({moviesData});
     return (
         <div>
             <p>{match.params.movie}</p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi enim nostrum reiciendis animi quod repellat ut excepturi maiores dicta labore! Quis itaque quibusdam praesentium doloribus. Laborum in suscipit at sunt!
+            {/* {match.params.movieData.description} */}
         </div>
     );
 }

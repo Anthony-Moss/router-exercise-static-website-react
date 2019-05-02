@@ -12,9 +12,11 @@ function Drinks({ drinks, match, history}) {
     return (
         <div>
             <h1>These are my favorite drinks</h1>
-            <span>
-                <h1>🥃</h1>
+            <h1>
+            <span role='img' aria-labelledby='imgHelp'>
+                🥃
             </span>
+            </h1>
             <ul style={{listStyleType: 'none', paddingLeft: 0}}>
                 <li>
                 {drinkLinks}
