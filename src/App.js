@@ -164,7 +164,7 @@ class App extends React.Component {
             render={(props) => (
               <Music
                 {...props}
-                songs={Object.keys(this.state.songs)}
+                songs={this.state.songs}
               />
             )}
           />

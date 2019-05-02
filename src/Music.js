@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Music({songs, match, history}) {
-    const musicLinks = songs.map(songName => (
+    const musicLinks = Object.keys(songs).map(songName => (
         <li>
             <Link to={`${match.path}/${songName}`}>{songName}</Link>
         </li>
